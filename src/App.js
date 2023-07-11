@@ -8,7 +8,7 @@ function App() {
   return (
     <BrowserRouter>
     <header>
-      <h1> Janna Litvinova </h1>
+    <Link className="site-logo" to="/">Janna Litvinova</Link>
       <nav>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
