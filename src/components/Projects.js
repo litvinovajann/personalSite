@@ -1,4 +1,6 @@
 import React from "react";
+import {Link} from "react-router-dom"
+import Footer from './Footer.js'
 
 export default function Projects() {
     const [projects, setProjects] = React.useState([])
@@ -8,20 +10,28 @@ export default function Projects() {
             .then(data => setProjects(data.projects))
     }, [])
    const projectItems = projects.map((project) => (
+        
         <div key={project.id} className="project-tile">
-            <img src={project.imageUrl} />
+            <Link to={project.link}>
+            
             <div className="project-info">
                 <h3>{project.name}</h3>
+                <h4>{project.description}</h4>
             </div>
-            <i className={`project-type ${project.type} selected`}>{project.type}</i>
+            <img src={project.imageUrl} />
+            </Link>
         </div>
    ))
+    
     return (
+        <>
         <div className="project-list-container">
             <h1>Explore all projects</h1>
             <div className="project-list">
                 {projectItems}
             </div>
         </div>
+        <Footer />
+        </>
     )
 }
