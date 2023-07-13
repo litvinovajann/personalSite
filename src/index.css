@@ -278,3 +278,8 @@ footer {
   background-size: cover;
   cursor: pointer;
 }
+
+.my-link {
+  font-weight: bold;
+  text-decoration: underline;
+}

@@ -1,6 +1,5 @@
 import React from "react";
 import {Link} from "react-router-dom"
-import Footer from './Footer.js'
 
 export default function Projects() {
     const [projects, setProjects] = React.useState([])
@@ -9,8 +8,8 @@ export default function Projects() {
             .then(res => res.json())
             .then(data => setProjects(data.projects))
     }, [])
+
    const projectItems = projects.map((project) => (
-        
         <div key={project.id} className="project-tile">
             <Link to={project.link}>
             
@@ -31,7 +30,6 @@ export default function Projects() {
                 {projectItems}
             </div>
         </div>
-        <Footer />
         </>
     )
 }

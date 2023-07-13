@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom"
 import About from './About.js'
-import Footer from './Footer.js'
 export default function Home() {
     return(
         <>
@@ -11,7 +10,6 @@ export default function Home() {
                 <Link to="mailto:litvinovajann@gmail.com">Email me</Link>
             </div>
             <About />
-            <Footer />
         </>
     )
 }

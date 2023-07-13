@@ -1,24 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-import {BrowserRouter, Routes, Route, Link} from "react-router-dom"
+import {BrowserRouter, Routes, Route, Link, NavLink} from "react-router-dom"
 import Home from './components/Home.js'
 import Projects from './components/Projects';
-
+import Layout from "./components/Layout"
 function App() {
   
   return (
     <BrowserRouter>
-    <header>
-    <Link className="site-logo" to="/">Janna Litvinova</Link>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/projects">Projects</Link>
-      </nav>
-    </header>
-    
     <Routes>
-       <Route path="/" element={<Home />}/>
-       <Route path="/projects" element={<Projects />}/>
+       <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Home />}/>
+          <Route path="/projects" element={<Projects />}/>
+       </Route>
     </Routes> 
   </BrowserRouter>
   );
